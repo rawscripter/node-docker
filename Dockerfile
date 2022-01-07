@@ -2,7 +2,8 @@ FROM node:latest
 WORKDIR /app
 COPY package.json .
 RUN npm install
-COPY . ./
-EXPOSE 3000
+COPY . ./ 
+ENV PORT 8080
+EXPOSE $PORT
 CMD ["npm", "run", "dev"]
 
